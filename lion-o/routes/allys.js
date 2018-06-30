@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var axios = require('axios');
+
 /* GET users listing. */
 router.get('/', function (req, res) {
     res.jsend.success({ allyName: 'Lion-O', allyWeapons: ['Sword of Omens', 'Claw Shield', 'Red Cloak']});
@@ -19,7 +20,7 @@ router.get('/:allyHost', async function (req, res) {
         res.jsend.error({
             code: 123,
             message: `No access to ally: ${urlAlly} for you!`,
-            data: err
+            data: err.message
         });
     }
 });
