@@ -5,7 +5,7 @@ var axios = require('axios');
 
 /* GET users listing. */
 router.get('/', function (req, res) {
-    res.jsend.success({ allyName: 'Lion-O', allyWeapons: ['Sword of Omens', 'Claw Shield', 'Red Cloak']});
+    res.jsend.success({ allyName: 'Lion-O', allyWeapons: ['Sword of Omens', 'Claw Shield', 'Red Cloak', 'Glock G43']});
 });
 
 router.get('/:allyHost', async function (req, res) {
