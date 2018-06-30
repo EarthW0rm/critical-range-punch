@@ -1,0 +1,47 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'generic-hero/'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/generic-hero:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/generic-hero:latest', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'lion-o/'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/lion-o:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/lion-o:latest', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'cheetara/'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/cheetara:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/cheetara:latest', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'jaga/'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/jaga:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/jaga:latest', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'panthro/'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/panthro:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/panthro:latest', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'snarf/'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/snarf:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/snarf:latest', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'tygra/'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/tygra:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/tygra:latest', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'wilykit/'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/wilykit:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/wilykit:latest', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'wilykat/'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/wilykat:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/wilykat:latest', '.']
+
+images: [
+  'gcr.io/$PROJECT_ID/generic-hero:$TAG_NAME', 'gcr.io/$PROJECT_ID/generic-hero:latest'
+  , 'gcr.io/$PROJECT_ID/lion-o:$TAG_NAME', 'gcr.io/$PROJECT_ID/lion-o:latest'
+  , 'gcr.io/$PROJECT_ID/cheetara:$TAG_NAME', 'gcr.io/$PROJECT_ID/cheetara:latest'
+  , 'gcr.io/$PROJECT_ID/jaga:$TAG_NAME', 'gcr.io/$PROJECT_ID/jaga:latest'
+  , 'gcr.io/$PROJECT_ID/panthro:$TAG_NAME', 'gcr.io/$PROJECT_ID/panthro:latest'
+  , 'gcr.io/$PROJECT_ID/snarf:$TAG_NAME', 'gcr.io/$PROJECT_ID/snarf:latest'
+  , 'gcr.io/$PROJECT_ID/tygra:$TAG_NAME', 'gcr.io/$PROJECT_ID/tygra:latest'
+  , 'gcr.io/$PROJECT_ID/wilykit:$TAG_NAME', 'gcr.io/$PROJECT_ID/wilykit:latest'
+  , 'gcr.io/$PROJECT_ID/wilykat:$TAG_NAME', 'gcr.io/$PROJECT_ID/wilykat:latest']
