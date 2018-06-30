@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function (req, res) {
-    res.send('respond with a resource');
+    res.jsend.success({ allyName: 'Panthro', allyWeapons: ['Nunchucks', 'Shoulder Spikes']});
 });
 
 module.exports = router;
