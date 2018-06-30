@@ -1,0 +1,252 @@
+version: '3'
+services:
+  lion-o:
+    image: thundercats/lion-o
+    build:
+      context: ./lion-o/
+      dockerfile: Dockerfile
+    environment:
+      - PORT=80
+    expose:
+      - "80"
+    ports:
+      - "7001:80"
+    networks:
+      thundercats_net:
+        aliases:
+          - lion-o
+      souls_net:
+        aliases:
+          - lion-o
+  cheetara:
+    image: thundercats/cheetara
+    build:
+      context: ./cheetara/
+      dockerfile: Dockerfile
+    environment:
+      - PORT=80
+    expose:
+      - "80"
+    ports:
+      - "7002:80"
+    networks:
+      thundercats_net:
+        aliases:
+          - cheetara
+  panthro:
+    image: thundercats/panthro
+    build:
+      context: ./panthro/
+      dockerfile: Dockerfile
+    environment:
+      - PORT=80
+    expose:
+      - "80"
+    ports:
+      - "7004:80"
+    networks:
+      thundercats_net:
+        aliases:
+          - panthro
+  tygra:
+    image: thundercats/tygra
+    build:
+      context: ./tygra/
+      dockerfile: Dockerfile
+    environment:
+      - PORT=80
+    expose:
+      - "80"
+    ports:
+      - "7005:80"
+    networks:
+      thundercats_net:
+        aliases:
+          - tygra
+  wilykat:
+    image: thundercats/wilykat
+    build:
+      context: ./wilykat/
+      dockerfile: Dockerfile
+    environment:
+      - PORT=80
+    expose:
+      - "80"
+    ports:
+      - "7006:80"
+    networks:
+      thundercats_net:
+        aliases:
+          - wilykat
+  wilykit:
+    image: thundercats/wilykit
+    build:
+      context: ./wilykit/
+      dockerfile: Dockerfile
+    environment:
+      - PORT=80
+    expose:
+      - "80"
+    ports:
+      - "7007:80"
+    networks:
+      thundercats_net:
+        aliases:
+          - wilykit
+  snarf:
+    image: thundercats/snarf
+    build:
+      context: ./snarf/
+      dockerfile: Dockerfile
+    environment:
+      - PORT=80
+    networks:
+      thundercats_net:
+        aliases:
+          - snarf
+
+  jaga:
+    image: thundercats/jaga
+    build:
+      context: ./jaga/
+      dockerfile: Dockerfile
+    environment:
+      - PORT=80
+    expose:
+      - "80"
+    ports:
+      - "7003:80"
+    networks:
+      souls_net:
+        aliases:
+          - jaga
+
+  pumyra:
+    image: thundercats/generic-hero
+    environment:
+      - PORT=80
+      - HERO_NAME=Pumyra
+      - HERO_WEAPONS=Cat's Tail
+    expose:
+      - "80"
+    ports:
+      - "7008:80"
+    networks:
+      thundercats_net:
+        aliases:
+          - pumyra
+
+  ro-bear-bill:
+    image: thundercats/generic-hero
+    build:
+      context: ./generic-hero/
+      dockerfile: Dockerfile
+    environment:
+      - PORT=80
+      - HERO_NAME=Ro-Bear-Bill
+      - HERO_WEAPONS=Stone Dart Shooters;Pocket Knife
+    expose:
+      - "80"
+    ports:
+      - "7010:80"
+    networks:
+      berbils_net:
+        aliases:
+          - ro-bear-bill
+  ro-bear-belle:
+    image: thundercats/generic-hero
+    build:
+      context: ./generic-hero/
+      dockerfile: Dockerfile
+    environment:
+      - PORT=80
+      - HERO_NAME=Ro-Bear-Belle
+      - HERO_WEAPONS=Stone Dart Shooters;Pocket Knife
+    expose:
+      - "80"
+    ports:
+      - "7011:80"
+    networks:
+      berbils_net:
+        aliases:
+          - ro-bear-belle
+  ro-bear-bert:
+    image: thundercats/generic-hero
+    build:
+      context: ./generic-hero/
+      dockerfile: Dockerfile
+    environment:
+      - PORT=80
+      - HERO_NAME=Ro-Bear-Bert
+      - HERO_WEAPONS=Stone Dart Shooters;Pocket Knife
+    expose:
+      - "80"
+    ports:
+      - "7012:80"
+    networks:
+      berbils_net:
+        aliases:
+          - ro-bear-bert
+  ro-bear-bob:
+    image: thundercats/generic-hero
+    build:
+      context: ./generic-hero/
+      dockerfile: Dockerfile
+    environment:
+      - PORT=80
+      - HERO_NAME=Ro-Bear-Bob
+      - HERO_WEAPONS=Stone Dart Shooters;Pocket Knife
+    expose:
+      - "80"
+    ports:
+      - "7013:80"
+    networks:
+      berbils_net:
+        aliases:
+          - ro-bear-bob
+
+  willa:
+    image: thundercats/generic-hero
+    build:
+      context: ./generic-hero/
+      dockerfile: Dockerfile
+    environment:
+      - PORT=80
+      - HERO_NAME=Willa
+      - HERO_WEAPONS=Bow and Arrow;Knife;Rope
+    expose:
+      - "80"
+    ports:
+      - "7014:80"
+    networks:
+      warrior_maidens_net:
+        aliases:
+          - willa
+
+  nadya:
+    image: thundercats/generic-hero
+    build:
+      context: ./generic-hero/
+      dockerfile: Dockerfile
+    environment:
+      - PORT=80
+      - HERO_NAME=Nadya
+      - HERO_WEAPONS=Bow and Arrow;Knife;Rope
+    expose:
+      - "80"
+    ports:
+      - "7015:80"
+    networks:
+      warrior_maidens_net:
+        aliases:
+          - nadya
+
+
+          
+
+networks:
+  thundercats_net:
+  souls_net:
+  berbils_net:
+  warrior_maidens_net:
+  
