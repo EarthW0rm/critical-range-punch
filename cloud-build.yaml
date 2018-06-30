@@ -1,0 +1,8 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'generic-hero/'
+  args: ['build', '-t', 'gcr.io/thunderccats-universe/generic-hero:build', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'lion-o/'
+  args: ['build', '-t', 'gcr.io/thunderccats-universe/lion-o:build', '.']
+images: ['gcr.io/thunderccats-universe/generic-hero:build', 'gcr.io/thunderccats-universe/lion-o:build']
