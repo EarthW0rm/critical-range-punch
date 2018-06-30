@@ -1,8 +1,38 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   dir: 'generic-hero/'
-  args: ['build', '-t', 'gcr.io/thundercats-universe/generic-hero:build', '.']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/generic-hero:$BRANCH_NAME', '.']
+
 - name: 'gcr.io/cloud-builders/docker'
   dir: 'lion-o/'
-  args: ['build', '-t', 'gcr.io/thundercats-universe/lion-o:build', '.']
-images: ['gcr.io/thundercats-universe/generic-hero:build', 'gcr.io/thundercats-universe/lion-o:build']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/lion-o:$BRANCH_NAME', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'cheetara/'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/cheetara:$BRANCH_NAME', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'jaga/'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/jaga:$BRANCH_NAME', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'panthro/'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/panthro:$BRANCH_NAME', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'snarf/'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/snarf:$BRANCH_NAME', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'tygra/'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/tygra:$BRANCH_NAME', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'wilykit/'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/wilykit:$BRANCH_NAME', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  dir: 'wilykat/'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/wilykat:$BRANCH_NAME', '.']
+
+images: ['gcr.io/$PROJECT_ID/generic-hero:$BRANCH_NAME', 'gcr.io/$PROJECT_ID/lion-o:$BRANCH_NAME', 'gcr.io/$PROJECT_ID/cheetara:$BRANCH_NAME', 'gcr.io/$PROJECT_ID/jaga:$BRANCH_NAME', 'gcr.io/$PROJECT_ID/panthro:$BRANCH_NAME', 'gcr.io/$PROJECT_ID/snarf:$BRANCH_NAME', 'gcr.io/$PROJECT_ID/tygra:$BRANCH_NAME', 'gcr.io/$PROJECT_ID/wilykit:$BRANCH_NAME', 'gcr.io/$PROJECT_ID/wilykat:$BRANCH_NAME']
