@@ -9,5 +9,4 @@ COPY *.js ./
 COPY './public/' '/app/public/'
 COPY './routes/' '/app/routes/'
 COPY './views/' '/app/views/'
-ENV PORT=7000
 CMD ["pm2-runtime", "/app/app.js"]

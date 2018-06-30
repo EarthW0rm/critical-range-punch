@@ -1,16 +1,17 @@
-
 {
   "name": "lion-o",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app"
+    "start": "node app",
+    "debug": "node --nolazy --inspect-brk=9229 app.js"
   },
   "description": "lion-o",
   "author": {
     "name": "marco"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.15.0",
     "cookie-parser": "^1.4.0",
     "debug": "^2.2.0",
