@@ -1,5 +1,6 @@
 *.lock
 *-lock.json
+.vs/
 
 # Logs
 logs
